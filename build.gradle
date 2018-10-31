@@ -1,0 +1,35 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+apply from: "config.gradle"
+
+
+buildscript {
+    
+    repositories {
+        google()
+        jcenter()
+
+        maven {
+            url 'https://bintray.com/aquila1988/HwariotLibrary'
+            name 'aquila1988'
+        }
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.1.2'
+        //JCenter 发布相关插件
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.1'
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
+
+//        classpath 'com.novoda:bintray-release:0.8.0'
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
